@@ -14,6 +14,6 @@ Eat-Da-Burger is a miniature full-stack web application with a custom ORM to han
 
 Yes, I know this app looks like hot garbage this week. A combination of this being pretty hard to wrap my head around this at first and having a lot less time to work on the homework this week has brought us here. It works though!
 
-I plan on doing the optional homework this week of turning this into a sequelize application. I plan on turning this one into my portfolio piece, and much work will be done to turn this into something worth looking at.
+I plan on doing the optional homework this week of turning this into a sequelize application. I will be turning this one into my portfolio piece, and much work will be done to turn this into something worth looking at.
 
 I'm sorry about your eyes.
