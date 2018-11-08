@@ -1,24 +1,20 @@
 $(document).ready(function(){
+    //this handles if the user clicks on a button to change the state of the burger
     $(".change-state").on("click", function(event) {
         var id = $(this).data("id");
+        //captures current state of data
         var newState = $(this).data("newstate");
-
-        console.log(newState);
-
+        //parses the state to be set up in mysql boolean fashion (0 = false, 1 = true)
         var stateParse;
-
-        if (newState === 'true'){
-            stateParse = 1;
-        }
-        if (newState === "false") {
-            stateParse = 0;
+        if (newState === false){
+          stateParse = 1;
+        } else if (newState === true) {
+          stateParse = 0;
         }
     
         var newEatState = {
           devoured: stateParse
         };
-
-        console.log(newEatState)
     
         // Send the PUT request.
         $.ajax("/api/burgers/" + id, {
@@ -30,4 +26,22 @@ $(document).ready(function(){
           }
         );
       });
-})
+    
+    $("#submitBurger").on("click", function(event){
+      event.preventDefault();
+
+      var newBurger = {
+        burger_name: $("#burgerInput").val().trim(),
+        devoured: 0
+      };
+
+    $.ajax("/api/burgers", {
+      type: "POST",
+      data: newBurger
+    }).then(
+      function() {
+        location.reload();
+      }
+    )
+    });
+});
